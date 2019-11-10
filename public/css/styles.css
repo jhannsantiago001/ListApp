@@ -10,9 +10,6 @@ h1 {
   padding: 10px;
 }
 
-.center{
-  text-align: center;
-}
 
 .box {
   max-width: 400px;
@@ -99,4 +96,18 @@ footer {
   color: white;
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  button {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border-color: transparent;
+    background-color: #A683E3;
+    color: #fff;
+    font-size: 30px;
+    padding-bottom: 6px;
+    border-width: 0;
+  }
 }
