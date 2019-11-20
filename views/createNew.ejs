@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<div class="box" id="heading">
+<h1 class = "">What's the name of your list?</h1>
+</div>
+<div class="box">
+<form class="item" action="/createNew" method="post">
+  <input type="text" name="listName" placeholder="New List Name" autocomplete="off">
+  <button class = "myButton" type="submit" name="list" value = ""><span class = "addBtn"></span>+</button>
+</form>
+</div>
+<%- include("footer") -%>
