@@ -10,7 +10,14 @@ h1 {
   padding: 10px;
 }
 
+a{
+  color: #00204a;
+  text-decoration: none;
+  font-weight: 200;
+}
+a:hover{
 
+}
 .box {
   max-width: 400px;
   margin: 50px auto;
@@ -23,7 +30,10 @@ h1 {
   background-color: #A683E3;
   text-align: center;
 }
-
+.listOfList{
+  display: flex;
+  align-items: center;
+}
 .item {
   min-height: 70px;
   display: flex;
@@ -114,7 +124,7 @@ footer {
   text-shadow:0px 1px 0px #2f6627;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .myButton {
     margin-right: 3px;
   	background-color:#a683e3;
@@ -135,9 +145,16 @@ footer {
   	position:relative;
   	top:1px;
   }
-
-
-
+  .createNew{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .createNewBtn{
+    width: 50%;
+    text-align: center;
+    flex-grow: 1;
+  }
   .addBtn{
     position: relative;
     right:100px;

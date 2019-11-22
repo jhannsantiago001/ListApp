@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+  <div class="createNew" id="createNewID">
+    <a class="createNewBtn" href="/createNew">Create Custom List!</a>
+  </div>
+    <div class="box ">
+
+      <form class="todayCheck" action="/delList" method="post">
+        <div class="title listOfList ">
+          <input type="checkbox" name="checked"  value="" onChange="" disabled>
+          <p><a href="/">Today</a></p>
+          <input type="hidden" name="classList" value="">
+        </div>
+      </form>
+      <% name.forEach(function(items){ %>
+      <form class="" action="/delList" method="post">
+        <div class="title listOfList ">
+          <input type="checkbox" name="checked"  value="<%= items.name %>" onChange="this.form.submit()">
+          <p><a href="/<%=  items.name  %>"><%=  items.name  %></a></p>
+          <input type="hidden" name="classList" value="">
+        </div>
+      </form>
+      <% }); %>
+    </div>
+    <%- include("footer") -%>
