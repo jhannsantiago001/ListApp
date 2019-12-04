@@ -11,7 +11,7 @@
       <form class="" action="/del" method="post" id = "listForm">
         <div class="item">
             <input id = "cbox-val"type="checkbox" name = "checked" value = "<%=  items._id  %>"onChange="this.form.submit()">
-          <p class = "editable" contenteditable="true" id = "my-content-editable-div" name = "<%= items._id %>"><%=  items.name  %></p>
+          <p tabindex = "-1"class = "editable" contenteditable="true" id = "my-content-editable-div" name = "<%= items._id %>"><%=  items.name  %></p>
           <input type="hidden" name="classList" value="<%=listTitle%>">
         </div>
       </form>
