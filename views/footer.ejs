@@ -1,8 +1,45 @@
+<!-- jshint esversion: 6 -->
 
+<form action="/edited" id = "content-id" method = "post">
+    <input id="my-textarea" name = "id" style="display:none"></input>
+    <input id="my-textarea-val" name = "value"style="display:none"></input>
+    <input id="my-textarea-list" name = "listname" style="display:none"></input>
+
+</form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="/javascript/pages.js" charset="utf-8"></script>
+<script>
+  $('.editable').on('keydown', function(e) {
+  if (e.which === 13 && e.shiftKey === false) {
+    e.preventDefault();
+    getContent(e);
+    return false;
+  }
+  function getContent(e) {
+    const eventName = e.target.getAttribute('name');
+    const eventId = e.target.getAttribute('id');
+    const eventValue = e.target.textContent;
+    if(eventValue == "" || !/\S/.test(eventValue)){
+      alert("Text required");
+    }else{
+    console.log(eventName, eventValue);
 
+    const textSub = $('#my-textarea');
+    textSub.val(eventName);
+
+    const textSub2 = $("#my-textarea-val");
+    textSub2.val(eventValue);
+
+    const contentId = $('#content-id');
+    const curList = $('#cur-list');
+    const curListForm = $('#my-textarea-list');
+    const listName = curList.attr('name');
+    console.log(listName);
+    curListForm.val(listName);
+    contentId.submit();
+  }
+  }
+});
 </script>
 </body>
 

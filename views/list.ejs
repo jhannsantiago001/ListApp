@@ -1,7 +1,7 @@
 <%- include("header") -%>
 
   <div class="box" id="heading">
-    <h1 class = "title"> <%= listTitle %> </h1>
+    <h1 class = "title" id = "cur-list" name = "<%=listTitle%>"> <%= listTitle %> </h1>
   </div>
 
 
@@ -10,15 +10,15 @@
     <% newListItems.forEach(function(items){ %>
       <form class="" action="/del" method="post" id = "listForm">
         <div class="item">
-            <input type="checkbox" name = "checked" value = "<%=  items._id  %>"onChange="this.form.submit()">
-          <p class = "editable" contenteditable="true" id = "my-contenteditable-div"><%=  items.name  %></p>
+            <input id = "cbox-val"type="checkbox" name = "checked" value = "<%=  items._id  %>"onChange="this.form.submit()">
+          <p class = "editable" contenteditable="true" id = "my-content-editable-div" name = "<%= items._id %>"><%=  items.name  %></p>
           <input type="hidden" name="classList" value="<%=listTitle%>">
         </div>
       </form>
       <% }); %>
 
       <form class="item" action="/" method="post">
-        <input type="text" name="newItem" placeholder="New Item" autocomplete="off" required>
+        <input pattern=".*\S+.*" title = "Please input valid text"type="text" name="newItem" placeholder="New Item" autocomplete="off" required>
         <button class = "myButton" type="submit" name="list" value = "<%= listTitle %>"><span class = "addBtn"></span>+</button>
       </form>
   </div>
