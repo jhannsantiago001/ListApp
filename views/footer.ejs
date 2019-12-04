@@ -9,12 +9,14 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-  $('.editable').on('keydown', function(e) {
+  $('.editable').on('keyup', function(e) {
+
+      e.preventDefault();
   if (e.which === 13 && e.shiftKey === false) {
-    e.preventDefault();
     getContent(e);
     return false;
   }
+
   function getContent(e) {
     const eventName = e.target.getAttribute('name');
     const eventId = e.target.getAttribute('id');
